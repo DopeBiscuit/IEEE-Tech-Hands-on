@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<form id="IEEE"></form>
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    <label class="ilabel">First Name</label>
+                </td>
+                <td>
+                    <input name="fname" type="text" class="itext" form="IEEE" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="ilabel">Last Name</label>
+                </td>
+                <td>
+                    <input name="lname" type="text" class="itext" form="IEEE" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="ilabel">Password</label>
+                </td>
+                <td>
+                    <input type="password" class="itext" form="IEEE" required>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" style="text-align: center;">
+                    <label class="ilabel" rowspan="2" style="font-weight: bold; font-size: 28px;">Gender</label>
+                </td>
+                <td>
+                    <input type="radio" class="iradio" name="Gender" value="male" form="IEEE" required>
+                    <label class="ilabel">Male</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" class="iradio" name="Gender" value="female" form="IEEE">
+                    <label class="ilabel">Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="1">
+                    <label class="ilabel">Birthday: </label>
+                    <select name="months" form="IEEE" required>
+                        <option value="months" selected disabled>months</option>
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                    </select>
+                </td>
+                <td colspan="1">
+                    <input name="day" type="number" class="date" placeholder="dd" form="IEEE" required style="margin-left: 7px;">
+                    <input name="year" type="number" class="date" placeholder="yyyy" form="IEEE" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <h2>Interests</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="Interests" class="ibox" type="checkbox" value="Sports" form="IEEE">
+                    <label class="ilabel">Sports</label>
+                </td>
+                <td>
+                    <input name="Interests" class="ibox" type="checkbox" value="Music" form="IEEE">
+                    <label class="ilabel">Music</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="Interests" class="ibox" type="checkbox" value="Books" form="IEEE">
+                    <label class="ilabel">Books</label>
+                </td>
+                <td>
+                    <input name="Interests" class="ibox" type="checkbox" value="Computer Stuff" form="IEEE">
+                    <label class="ilabel">Computer Stuff</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input name="Interests" class="ibox" type="checkbox" value="Fashion" form="IEEE">
+                    <label class="ilabel">Fashion</label>
+                </td>
+                <td>
+                    <input name="Interests" class="ibox" type="checkbox" value="Movies" form="IEEE">
+                    <label class="ilabel">Movies</label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" form="IEEE" style="width: auto;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EFB2B0;
+}
+
+table {
+    /* width: 35%; */
+    max-width: 555px;
+    /* height: 650px; */
+    border-spacing: 20px;
+    border: 10px outset #d66b6b;
+}
+
+td {
+    width: 50%;
+    border: 2px solid #7c4747a1;
+    /* padding-right: 2%; */
+    border-spacing: 0px;
+}
+
+input {
+    height: inherit;
+}
+
+select {
+    width: 65%;
+    text-align: center;
+}
+
+.itext {
+    width: 100%;
+    margin: 0px 0px;
+}
+
+.ilabel {
+    font-size: 18px;
+
+}
+
+.date {
+    width: 45%;
+    text-align: center;
+}
+
+h2 {
+    margin: 0px 0px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
