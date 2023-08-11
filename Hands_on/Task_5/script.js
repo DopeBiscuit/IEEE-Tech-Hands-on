@@ -1,6 +1,6 @@
 function dataValidation()
 {
-    var Ruser = /[a-z]/gi;
+    var Ruser = /^[a-z]$/gi;
     var Rnum = /^(010|011|012|015){1}[0-9]{8}$/;
     var Remail = /([a-z0-9])+@([a-z0-9])+\.[a-z]{3}/i;
     var Rpass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
