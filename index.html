@@ -8,12 +8,22 @@
     <script src="script.js"></script>
 </head>
 <body>
+    <form id="shrtct"></form>
     <div class="c-card">
-        <div id="c-form">
-            <button onclick="flip()">hello</button>
+        <div class="c-div" id="c-form">
+            <!-- <div class="item1"><labe form="shrtct" name="user" class="c-label">User Name:</labe></div> -->
+            <div class="item2"><input required form="shrtct" type="text" id="user" class="c-text" placeholder="User Name" autocomplete="off"></div>
+            <!-- <div class="item1"><label form="shrtct" name="number" class="c-label">Phone Number:</label></div> -->
+            <div class="item2"><input required form="shrtct" type="text" id="number" class="c-text" placeholder="Number" autocomplete="off"></div>
+            <!-- <div class="item1"><label form="shrtct" name="email" class="c-label">Email:</label></div> -->
+            <div class="item2"><input required form="shrtct" type="text" id="email" class="c-text" placeholder="Email" autocomplete="off"></div>
+            <!-- <div class="item1"><label form="shrtct" name="pass" class="c-label">Password:</label></div> -->
+            <div class="item2"><input required form="shrtct" type="password" id="pass" class="c-text" placeholder="Password" autocomplete="off"></div>
+            <button class="c-button" onclick="dataValidation()">Submit</button>
         </div>
-        <div id="c-answer">
-            
+        <div class="c-div" id="c-answer">
+            <p id="answer" style="color: #913586;">Hello fam</p>
+            <button class="c-button" onclick="flipBack()">Go Back</button>
         </div>
     </div>
 </body>

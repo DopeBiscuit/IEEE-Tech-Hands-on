@@ -7,28 +7,114 @@ body {
     height: 100vh;
 }
 
+p {
+    display: inline;
+    color: rgb(230, 190, 190);
+}
+
 .c-card {
     /* position: relative; */
+    display: flex;
     border: 3px solid #913586;
     border-radius: 25px;
     background-color: #d93b8a;
     height: 55vh;
     width:  50vw;
     margin: auto auto;
+    align-content: center;
 }
 
-#c-form{
+/* #c-form{
     display: block;
-    border-radius: 25px;
-    background-color: black;
-    height: 100%;
-    width: 100%;
-}
+} */
 
 #c-answer{
     display: none;
-    border-radius: 25px;
-    background-color: yellow;
-    height: 100%;
-    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+
+    font-weight: bold;
+    color: #913586;
+    font-size: 28px;
+
+}
+#c-answer>div {
+    flex: 1 0 50%;
+  }
+  
+#c-answer>div:first-child {
+flex: 0 1 100%;
+}
+
+#answer {
+    margin: auto
+}
+
+.c-div {
+    height: 80%;
+    width: 80%;
+    margin: auto auto;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+    align-items: center;
+    row-gap: 0px;
+
+}
+
+/* .item1 {
+    grid-column: 1 / span 2;
+} */
+
+.item2 {
+    grid-column: 1 / span 5;
+}
+
+.c-text {
+    background-color: #e10786;
+    height: 33px;
+    width: 80%;
+    border: 2px solid #913586;
+    border-radius: 5px;
+
+    color: rgb(230, 190, 190);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.c-button {
+    grid-column: 1 / span 5;
+    width: 81%;
+    background-color: #B0287E;
+    margin: 0 auto;
+    height: 40px;
+    border: 3px solid #913586;
+    border-radius: 5px;
+    box-shadow: 0 7px #620056;
+    cursor: pointer;
+    outline: none;
+
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+::placeholder {
+    color: #913586;
+    opacity: 1;
+}
+
+.c-button:hover {
+    background-color: #913586;
+    border: 3px solid white;
+}
+
+.c-button:active {
+    background-color: #913586;
+    box-shadow: 0 3px #620056;
+    transform: translateY(4px);
 }
