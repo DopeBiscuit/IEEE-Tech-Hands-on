@@ -1,0 +1,1 @@
+# **First task, introduction to HTML and basic HTML element structuting and basic elements, task is to recreate an HTML page from scratch to high accuracy, no CSS was required even though i used some**
