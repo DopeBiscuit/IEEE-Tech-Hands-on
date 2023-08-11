@@ -1,0 +1,1 @@
+**Task three, Further learning about CSS, including: Flex, grids, some CSS properties, task is to recreate a snapshot of the BCC website to the best of our abilites using HTML and CSS, no functionality required, iamges where given**
