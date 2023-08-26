@@ -10,12 +10,7 @@ function dataValidation()
     var email = document.getElementById("email").value;
     var pass = document.getElementById("pass").value;
 
-    var out = "";
-    for(var char of username)
-    {
-        out += (char == char.toLowerCase()) ? char.toUpperCase(): char.toLowerCase();
-    }
-    username = out;
+    username = username.replace(/./g, (char) => {return (char == char.toLowerCase()) ? char.toUpperCase() : char.toLowerCase();});
     
     if(!username.match(Ruser))
     {
