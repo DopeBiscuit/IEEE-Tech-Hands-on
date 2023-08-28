@@ -21,12 +21,15 @@ function tabSwitch(param) {
     if (param.id == 't1') {
         document.getElementById('task1').classList.remove('d-none');
         document.getElementById('task2').classList.add('d-none');
+        document.getElementById('singers').classList.add('d-none');
         // Call task1 function.
         populate();
     }
     else {
         document.getElementById('task1').classList.add('d-none');
         document.getElementById('task2').classList.remove('d-none');
+        document.getElementById('task2').classList.add('d-flex');
+        task2();
     }
 }
 
@@ -49,8 +52,7 @@ function populate() {
 }
 
 function popper() {
-    if(select.value != 'none')
-    {
+    if (select.value != 'none') {
         array.splice(select.value, 1);
         populate(select);
     }
@@ -65,30 +67,29 @@ function adder() {
 
 ////////////////                            Solver part of the JS code
 
-function solve () {
+function solve() {
     var q1 = array.every(item => !parseInt(item));
     var q2 = array.some(item => item[0] == 'a');
-    var q3 = array.map( item => "I love  " + item);
+    var q3 = array.map(item => "I love  " + item);
 
-    console.log("trial");
 
     que1(q1);
     que2(q2);
     que3(q3);
 }
 
-function que1 (ans) {
+function que1(ans) {
     var p = document.getElementById('q1p');
     var s = document.getElementById('q1s');
 
     var imposter = 0;
-    for(var i = 0;i < array.length;i++) {
-        if(parseInt(array[i])) {
+    for (var i = 0; i < array.length; i++) {
+        if (parseInt(array[i])) {
             imposter += 1;
         }
     }
 
-    if(ans) {
+    if (ans) {
         p.innerHTML = "YEP, all your elements are strings.";
         s.innerHTML = '';
     }
@@ -99,19 +100,19 @@ function que1 (ans) {
 
 }
 
-function que2 (ans) {
+function que2(ans) {
     var p = document.getElementById('q2p');
     var s = document.getElementById('q2s');
 
     var lovers = 0;
 
-    for(var i = 0;i < array.length;i++) {
-        if(array[i][0] == 'a') {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i][0] == 'a') {
             lovers += 1;
         }
     }
 
-    if(ans) {
+    if (ans) {
         p.innerHTML = "Looks like you love my boy 'a'.😁";
         s.innerHTML = `${lovers} items start with the letter 'a'`;
     }
@@ -122,14 +123,63 @@ function que2 (ans) {
 
 }
 
-function que3 (ans) {
+function que3(ans) {
     var s = document.getElementById('q3s');
     var string = '';
 
     ans.forEach(element => {
-        console.log(element);
         string += element + '<br>';
     });
-    console.log(string);
     s.innerHTML = string;
+}
+
+
+
+/////////////////////////                           Task 2
+var objects = {};
+var bands = document.getElementById('bands');
+var singersSelect = document.getElementById('sngrslct');
+var singer = []
+
+function task2() {
+    bands.innerHTML = '<option value="none" disabled selected>Select Band</option>'
+
+    var xhr = new XMLHttpRequest();
+
+    //2) Connect [Open Connection]
+    xhr.open("GET", "rockbands.json");
+
+    //3)send
+    xhr.send('');
+
+    //4) Listner [onreadystatechange]
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) { //404
+                // console.log( JSON.parse(xhr.responseText) );
+                // console.log(xhr.responseText);
+
+                objects = JSON.parse(xhr.responseText);//[{},{},{}]
+                var items = Object.keys(objects);
+
+                for (var i = 0; i < items.length; i++) {
+                    bands.appendChild(addOption(items[i], items[i]));
+                }
+            }
+        }
+    }
+}
+
+function singers () {
+    document.getElementById('singers').classList.remove('d-none');
+    singersSelect.innerHTML = '<option value="none" disabled selected>Select Singer</option>'
+    
+    singer = objects[bands.value];
+    for(var i = 0;i < singer.length; i++) {
+        singersSelect.appendChild(addOption(singer[i].name, singer[i].value));
+    }
+}
+
+function redirect () {
+    window.open(singersSelect.value, "_blank");
 }
