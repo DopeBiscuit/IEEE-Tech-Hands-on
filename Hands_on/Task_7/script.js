@@ -55,7 +55,10 @@ function popper() {
 }
 
 function adder() {
-    array.push(document.getElementById('txtelm').value);
+    var txt = document.getElementById('txtelm');
+    array.push(txt.value);
+    txt.value = '';
+    populate();
 }
 
 ////////////////                            Solver part of the JS code
@@ -63,7 +66,7 @@ function adder() {
 function solve () {
     var q1 = array.every(item => !parseInt(item));
     var q2 = array.some(item => item[0] == 'a');
-    var q3 = array.map( item => "I like  " + item);
+    var q3 = array.map( item => "I love  " + item);
 
     console.log("trial");
 
@@ -121,9 +124,10 @@ function que3 (ans) {
     var s = document.getElementById('q3s');
     var string = '';
 
-    q3.array.forEach(element => {
+    ans.forEach(element => {
+        console.log(element);
         string += element + '<br>';
     });
-
+    console.log(string);
     s.innerHTML = string;
 }
