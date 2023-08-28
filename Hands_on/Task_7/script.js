@@ -12,8 +12,10 @@ function tabSwitch(param) {
     // resetting all active items, then activating clicked item.
     for (var i = 0; i < list.length; i++) {
         list[i].classList.remove('active');
+        list[i].style.backgroundColor = "#3f3f3f";
     }
     param.classList.add('active');
+    param.style.backgroundColor = "#282828";
 
     // Display corresponding div body and hiding others.
     if (param.id == 't1') {
@@ -37,7 +39,7 @@ function addOption(name, index) {
 
 function populate() {
     // Clear current elements
-    select.innerHTML = '<option selected value="none" disabled class="text-muted">Select Element</option>';
+    select.innerHTML = '<option selected value="none" disabled>Select Element</option>';
 
     // Add all elements
     for (var i = 0; i < array.length; i++) {
