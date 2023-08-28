@@ -71,11 +71,13 @@ function solve() {
     var q1 = array.every(item => !parseInt(item));
     var q2 = array.some(item => item[0] == 'a');
     var q3 = array.map(item => "I love  " + item);
+    var q4 = array.filter(item => item[0] == 's' || item[0] == 'b');
 
 
     que1(q1);
     que2(q2);
     que3(q3);
+    que4(q4);
 }
 
 function que1(ans) {
@@ -131,6 +133,21 @@ function que3(ans) {
         string += element + '<br>';
     });
     s.innerHTML = string;
+}
+
+function que4 (ans) {
+    var p = document.getElementById('q4p');
+    var s = document.getElementById('q4s');
+    s.innerHTML = '';
+
+    if(ans.length) {
+        p.innerHTML = `Wowzer, ${ans.length} items start with 'b' or 's'.`
+        ans.forEach(item => s.innerHTML += item + ', ');
+    }
+    else {
+        p.innerHTML = "Not a single item starts with 'b' or 's'😔"
+        s.innerHTML = 'Now this is BS😤'
+    }
 }
 
 
