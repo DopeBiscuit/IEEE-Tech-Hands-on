@@ -20,38 +20,11 @@
 </head>
 
 <body class="bg-dark d-flex align-items-center justify-content-center">
-    <script>
-        var defaultArray = ['apple', 'strawberry', 'banana', 'orange', 'mango'];
-        var currentArray = [];
-
-        function tabSwitch(param)
-        {
-            // List of list items elements
-            var list = document.getElementsByClassName('nav-link');
-
-            // resetting all active items, then activating clicked item.
-            for(var i = 0;i < list.length; i++) {
-                list[i].classList.remove('active');
-            }
-            param.classList.add('active');
-
-            // Display corresponding div body and hiding others.
-            if(param.id == 't1') {
-                document.getElementById('task1').classList.remove('d-none');
-                document.getElementById('task2').classList.add('d-none');
-            }
-            else {
-                document.getElementById('task1').classList.add('d-none');
-                document.getElementById('task2').classList.remove('d-none');
-            }
-        }
-    </script>
-
-    <div class="card text-center" style="width: 50%; height: 50%;">
+    <div class="card text-center">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link active"  href="#" id="t1" onclick="tabSwitch(this);return false;">Task 1</a>
+                    <a class="nav-link active" href="#" id="t1" onclick="tabSwitch(this);return false;">Task 1</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" onclick="tabSwitch(this);return false;">Task 2</a>
@@ -64,13 +37,42 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col align-content-center">
-                            <input type="text" class="form-control" placeholder="Enter element.">
-                            <button type="button" class="btn btn-success w-50 mt-3 text-center"><i class="bi bi-plus-circle-fill"></i> Add</button>
+                            <input type="text" class="form-control" id="txtelm" placeholder="Enter element.">
+                            <button onclick="adder()" type="button" class="btn btn-success w-50 mt-3 text-center"><i
+                                    class="bi bi-plus-circle-fill"></i> Add</button>
                         </div>
                         <div class="col-6 align-content-center">
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" id="elements" aria-label="Default select example"
+                                aria-placeholder="Pick an option">
+
                             </select>
-                            <button type="button" class="btn btn-danger w-50 mt-3 text-center"><i class="bi bi-trash-fill"></i> Pop</button>
+                            <button onclick="popper()" type="button" class="btn btn-danger w-50 mt-3 text-center"><i
+                                    class="bi bi-trash-fill"></i> Pop</button>
+                        </div>
+                    </div>
+
+                    <div class="row my-4">
+                        <div class="list-group">
+                            <div class="list-group-item list-group-item-action" aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Strings ???🤔🤔</h5>
+                                </div>
+                                <p class="mb-1" id="q1p">Some placeholder content in a paragraph.</p>
+                                <small id="q1s">And some small print.</small>
+                            </div>
+                            <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Show 'a' some love💓</h5>
+                                </div>
+                                <p class="mb-1" id="q2p"></p>
+                                <small id="q2s">And some muted small print.</small>
+                            </div>
+                            <div class="list-group-item list-group-item-action">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">I am a lover not a fighter😉😘</h5>
+                                </div>
+                                <small id="q3s" class="text-muted">And some muted small print.</small>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -82,10 +84,11 @@
 
                 </div>
             </div>
-            
+
         </div>
     </div>
     </div>
+    <script src="script.js"></script>
 
 </body>
 
