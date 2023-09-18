@@ -1,4 +1,4 @@
-<div align="center"><img src="https://i.imgur.com/Ba9CDl0.jpg" alt="IEEE ASUSB logo" width="400" height="400"/></div><hr>
+<div align="center"><img src="https://i.imgur.com/Ba9CDl0.jpg" alt="IEEE ASUSB logo" width="300" height="300"/></div><hr>
 
 # This is my IEEE IT member tasks documentation
 
